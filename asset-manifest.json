@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Crime_Tracking/static/css/main.99223867.css",
-    "main.js": "/Crime_Tracking/static/js/main.67df30e8.js",
+    "main.js": "/Crime_Tracking/static/js/main.f4ddf514.js",
     "static/media/about-hero-bg.jpg": "/Crime_Tracking/static/media/about-hero-bg.d9a9ab6a748229087285.jpg",
     "index.html": "/Crime_Tracking/index.html",
     "main.99223867.css.map": "/Crime_Tracking/static/css/main.99223867.css.map",
-    "main.67df30e8.js.map": "/Crime_Tracking/static/js/main.67df30e8.js.map"
+    "main.f4ddf514.js.map": "/Crime_Tracking/static/js/main.f4ddf514.js.map"
   },
   "entrypoints": [
     "static/css/main.99223867.css",
-    "static/js/main.67df30e8.js"
+    "static/js/main.f4ddf514.js"
   ]
 }
