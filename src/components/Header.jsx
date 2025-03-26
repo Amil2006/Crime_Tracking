@@ -11,13 +11,13 @@ const Header = () => {
       <div className="upper-header">
         <div className="logo-container">
           <img 
-            src={process.env.PUBLIC_URL + "/images/Emblem_of_India.svg"} 
+            src="https://github.com/Amil2006/Crime_Tracking/blob/main/public/images/Emblem_of_India.svg" 
             alt="NIA Logo" 
             className="logo-img"
             />
             
           <img 
-            src={process.env.PUBLIC_URL + "/images/nia-logo.jpeg"} 
+            src="https://github.com/Amil2006/Crime_Tracking/blob/main/public/images/nia-logo.jpeg"
             alt="NIA Logo" 
             className="logo-img"
           />
@@ -27,7 +27,7 @@ const Header = () => {
           </div>
           <div>
             <img 
-              src={process.env.PUBLIC_URL + "/images/azadi-logo.webp"}
+              src="https://github.com/Amil2006/Crime_Tracking/blob/main/public/images/azadi-logo.webp"
               alt="NIA Logo" 
               className="azadi-img"
             />
