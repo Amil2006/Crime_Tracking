@@ -11,13 +11,12 @@ const Header = () => {
       <div className="upper-header">
         <div className="logo-container">
           <img 
-            src="https://github.com/Amil2006/Crime_Tracking/blob/main/public/images/Emblem_of_India.svg" 
+            src="/images/Emblem_of_India.svg" 
             alt="NIA Logo" 
             className="logo-img"
             />
-            
           <img 
-            src="https://github.com/Amil2006/Crime_Tracking/blob/main/public/images/nia-logo.jpeg"
+            src="/images/nia-logo.jpeg" 
             alt="NIA Logo" 
             className="logo-img"
           />
@@ -27,7 +26,7 @@ const Header = () => {
           </div>
           <div>
             <img 
-              src="https://github.com/Amil2006/Crime_Tracking/blob/main/public/images/azadi-logo.webp"
+              src="/images/azadi-logo.webp" 
               alt="NIA Logo" 
               className="azadi-img"
             />
@@ -38,16 +37,18 @@ const Header = () => {
       {/* Lower Header - Navigation Menu */}
       <div className="lower-header">
         <nav className="nav-menu">
-          <div className="search-container">
+          {/* <div className="search-container">
             <input type="text" placeholder="Search..." />
             <button>Search</button>
-          </div>
+          </div> */}
           <div className="menu-options">
             <button className="menu-btn" onClick={() => navigate('/')}>Home</button>
             <button className="menu-btn" onClick={() => navigate('/about')}>About</button>
-            <button className="menu-btn">Services</button>
-            <button className="menu-btn">Contact Us</button>
-            <button className="menu-btn" onClick={() => navigate('/login')}>Login</button>
+            <button className="menu-btn" onClick={() => navigate('/services')}>Services</button>
+            <button className="menu-btn" onClick={() => navigate('/contact')}>Contact Us</button>
+          </div>
+          <div>
+            <button className="login" onClick={() => navigate('/login')}>Login</button>
           </div>
         </nav>
       </div>
