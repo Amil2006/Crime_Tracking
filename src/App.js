@@ -1,6 +1,4 @@
 import React from 'react';
-import ReportCrime from './pages/ReportCrime';
-import { HashRouter as Router } from 'react-router-dom'; 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
@@ -8,8 +6,11 @@ import Banner from './components/Banner';
 import CrimeStats from './components/CrimeStats';
 import NewsSection from './components/NewsSection';
 import Footer from './components/Footer';
-import Login from './pages/Login';
 import AboutPage from './pages/AboutPage';
+import ServicesPage from './pages/ServicesPage';
+import ContactPage from './pages/ContactPage';
+import Login from './pages/Login';
+import ReportCrime from './pages/ReportCrime';
 
 function App() {
   return (
@@ -31,8 +32,10 @@ function App() {
             } 
           />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/report-crime" element={<ReportCrime />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/report" element={<ReportCrime />} />
         </Routes>
       </main>
       <Footer />
