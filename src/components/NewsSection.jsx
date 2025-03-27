@@ -4,21 +4,21 @@ import './NewsSection.css';
 const newsItems = [
   {
     id: 1,
-    title: 'New Cyber Security Guidelines Released',
-    date: 'May 15, 2023',
-    excerpt: 'The government has released new guidelines to combat rising cyber crimes...'
+    title: 'New Women Safety Initiative Launched in Metro Cities',
+    date: 'May 28, 2023',
+    excerpt: 'GPS-enabled panic buttons to be installed in public transport across 10 major cities...'
   },
   {
     id: 2,
-    title: 'Major Phishing Scam Busted',
-    date: 'April 28, 2023',
-    excerpt: 'Authorities have arrested 12 individuals involved in a nationwide phishing operation...'
+    title: 'Interstate Drug Cartel Busted in Punjab',
+    date: 'May 20, 2023',
+    excerpt: 'Narcotics worth ₹120 crore seized in joint operation by NCB and state police...'
   },
   {
     id: 3,
-    title: 'Awareness Campaign Launched',
-    date: 'April 10, 2023',
-    excerpt: 'New public awareness campaign aims to educate citizens about online safety...'
+    title: 'Financial Fraud Alert: New ATM Skimming Modus Operandi',
+    date: 'May 15, 2023',
+    excerpt: 'Criminals using fake card readers at petrol pumps - public advised to check for tampering...'
   }
 ];
 
