@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import Header from '../components/Header';
-// import Footer from '../components/Footer';
-import './ReportCrime.css'; // We'll create this CSS file
+import './ReportCrime.css';
+import api from '../services/api';
 
 const ReportCrime = () => {
   const navigate = useNavigate();
@@ -66,17 +65,30 @@ const ReportCrime = () => {
     setIsSubmitting(true);
     
     try {
-      // In a real app, you would send this data to your backend
-      console.log('Form data:', formData);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
+      const formDataToSend = new FormData();
+      formDataToSend.append('crimeType', formData.crimeType);
+      formDataToSend.append('description', formData.description);
+      formDataToSend.append('date', formData.date);
+      formDataToSend.append('time', formData.time);
+      formDataToSend.append('location', formData.location);
+      formDataToSend.append('anonymous', formData.anonymous);
+      formDataToSend.append('contactEmail', formData.contactEmail);
+      formDataToSend.append('contactPhone', formData.contactPhone);
+      if (formData.evidence) {
+        formDataToSend.append('evidence', formData.evidence);
+      }
+
+      // Using the api service instead of fetch
+      const response = await api.post('/reports', formDataToSend, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+
       alert('Crime report submitted successfully!');
       navigate('/');
     } catch (error) {
-      console.error('Submission error:', error);
-      alert('Failed to submit report. Please try again.');
+      alert(error.response?.data?.error || 'Failed to submit report');
     } finally {
       setIsSubmitting(false);
     }
@@ -84,11 +96,9 @@ const ReportCrime = () => {
 
   return (
     <div className="report-crime-page">
-      {/* <Header /> */}
       <main className="report-crime-container">
         <div className="report-header">
           <h2>Report a Crime</h2>
-          {/* <p>Your information will be kept confidential</p> */}
         </div>
         
         <form onSubmit={handleSubmit} className="crime-report-form">
@@ -177,51 +187,51 @@ const ReportCrime = () => {
           </div>
           
           <div className="form-section">
-  <h3>Your Information</h3>
-  
-  <div className="checkbox-group">
-    <input
-      type="checkbox"
-      id="anonymous"
-      name="anonymous"
-      checked={formData.anonymous}
-      onChange={handleChange}
-    />
-    <label htmlFor="anonymous">Report anonymously</label>
-  </div>
-  
-  {!formData.anonymous && (
-    <div className="contact-fields">
-      <div className="form-group">
-        <label htmlFor="contactEmail">Email</label>
-        <input
-          type="email"
-          id="contactEmail"
-          name="contactEmail"
-          value={formData.contactEmail}
-          onChange={handleChange}
-          placeholder="Your email address"
-        />
-      </div>
-      
-      <div className="form-group">
-        <label htmlFor="contactPhone">Phone Number</label>
-        <input
-          type="tel"
-          id="contactPhone"
-          name="contactPhone"
-          value={formData.contactPhone}
-          onChange={handleChange}
-          placeholder="Your phone number"
-        />
-      </div>
-      
-      {errors.contact && (
-        <div className="error-message">{errors.contact}</div>
-      )}
-    </div>
-  )}
-</div>
+            <h3>Your Information</h3>
+            
+            <div className="checkbox-group">
+              <input
+                type="checkbox"
+                id="anonymous"
+                name="anonymous"
+                checked={formData.anonymous}
+                onChange={handleChange}
+              />
+              <label htmlFor="anonymous">Report anonymously</label>
+            </div>
+            
+            {!formData.anonymous && (
+              <div className="contact-fields">
+                <div className="form-group">
+                  <label htmlFor="contactEmail">Email</label>
+                  <input
+                    type="email"
+                    id="contactEmail"
+                    name="contactEmail"
+                    value={formData.contactEmail}
+                    onChange={handleChange}
+                    placeholder="Your email address"
+                  />
+                </div>
+                
+                <div className="form-group">
+                  <label htmlFor="contactPhone">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="contactPhone"
+                    name="contactPhone"
+                    value={formData.contactPhone}
+                    onChange={handleChange}
+                    placeholder="Your phone number"
+                  />
+                </div>
+                
+                {errors.contact && (
+                  <div className="error-message">{errors.contact}</div>
+                )}
+              </div>
+            )}
+          </div>
           
           <div className="form-actions">
             <button
@@ -241,7 +251,6 @@ const ReportCrime = () => {
           </div>
         </form>
       </main>
-      {/* <Footer /> */}
     </div>
   );
 };
