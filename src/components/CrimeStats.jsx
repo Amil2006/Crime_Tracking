@@ -3,12 +3,14 @@ import './CrimeStats.css';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const data = [
-  { name: 'Jan', cases: 400 },
-  { name: 'Feb', cases: 300 },
-  { name: 'Mar', cases: 600 },
-  { name: 'Apr', cases: 800 },
-  { name: 'May', cases: 500 },
-  { name: 'Jun', cases: 900 },
+  { name: 'Cyber Crime', cases: 400 },
+  { name: 'Theft', cases: 300 },
+  { name: 'Fraud', cases: 600 },
+  // { name: 'Harassment', cases: 800 },
+  { name: 'Assault', cases: 500 },
+  // { name: 'Vandalism', cases: 900 },
+  { name: 'Drug Offence', cases: 700 },
+  { name: 'Other', cases: 200 },
 ];
 
 const CrimeStats = () => {
@@ -32,10 +34,10 @@ const CrimeStats = () => {
           <h3>About Us</h3>
           <p>The National Cyber Crime Reporting Portal is an initiative of the Government of India to facilitate victims/complainants to report cyber crime complaints online.</p>
           <div className="links">
-            <a href="#">Overview</a>
-            <a href="#">Mission</a>
-            <a href="#">Vision</a>
-            <a href="#">Useful Links</a>
+            <a href="http://localhost:3000/about">Overview</a>
+            <a href="http://localhost:3000/about">Mission</a>
+            <a href="http://localhost:3000/about">Vision</a>
+            <a href="http://localhost:3000/services">Useful Links</a>
           </div>
         </div>
       </div>
